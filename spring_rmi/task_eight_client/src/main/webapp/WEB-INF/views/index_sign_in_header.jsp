@@ -14,7 +14,7 @@
                 <a href="#" target="_blank"><img alt="" src="/image/54537.png"></a>
                 <a href="#" target="_blank"><img alt="" src="/image/45678678.png"></a>
                 <a href="#" target="_blank"><img alt="" src="/image/54375483543.png"></a>
-                <a href="/school/index/sign_in" target="_self"><img alt="" src="/image/log-in.png"></a>
+                <a href="school/index/sign_in" target="_self"><img alt="" src="/image/log-in.png"></a>
             </div>
         </div>
     </div>
@@ -35,8 +35,8 @@
         </div>
         <div id="open-nav" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav navbar-right text-center list-inline">
-                <li><a href="/school/index">首页</a></li>
-                <li><a href="/school/profession">职业</a></li>
+                <li><a href="school/index">首页</a></li>
+                <li><a href="school/profession">职业</a></li>
                 <li><a href="">推荐</a></li>
                 <li><a href="">关于</a></li>
             </ul>

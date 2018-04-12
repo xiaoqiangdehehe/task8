@@ -29,7 +29,7 @@
 
             <div id="example-navbar-collapse" class=" collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <a href="/school/index"><li>首 页</li></a>
+                    <a href="school/index"><li>首 页</li></a>
                     <a href=""><li class="border">职 业</li></a>
                     <a href=""><li>推 荐</li></a>
                     <a href=""><li>关 于</li></a>

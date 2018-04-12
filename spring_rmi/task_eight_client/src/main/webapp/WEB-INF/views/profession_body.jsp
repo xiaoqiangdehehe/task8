@@ -96,7 +96,6 @@
                                 <p class="flip-text">${pl.introductionMore}</p>
                             </div>
                         </div>
-
                     </div>
                 </c:if>
             </c:forEach>

@@ -8,6 +8,11 @@ import org.wyq.task.pojo.Profession;
 import org.wyq.task.pojo.Salary;
 import org.wyq.task.pojo.Students;
 import org.wyq.task.service.BaseService;
+import org.wyq.task.tuscany.Client;
+
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,11 +21,15 @@ import java.util.Map;
 @RequestMapping("/school")
 public class SchoolController {
 
+//    @Autowired
+//    private RmiSelect rmiSelect;
+
     @Autowired
-    private BaseService schoolServiceRmi;
+    private Client clinet;
 
     @RequestMapping("/index")
-    public ModelAndView index() {
+    public ModelAndView index() throws RemoteException, NotBoundException, MalformedURLException {
+        BaseService schoolServiceRmi = clinet.getBaseService();
         ModelAndView mav = new ModelAndView();
         List<Students> list = schoolServiceRmi.selectStudentsByEvaluate();
         Integer graduated = schoolServiceRmi.countStudentsByStatus(2);
@@ -35,7 +44,8 @@ public class SchoolController {
     }
 
     @RequestMapping("/profession")
-    public ModelAndView profession() {
+    public ModelAndView profession() throws RemoteException, NotBoundException, MalformedURLException {
+        BaseService schoolServiceRmi = clinet.getBaseService();
         ModelAndView mav = new ModelAndView();
         List<String> directionCategoryList = schoolServiceRmi.directionCategoryList();
         List<Profession> professionList = schoolServiceRmi.selectProfessionAll();

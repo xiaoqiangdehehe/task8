@@ -25,18 +25,37 @@
             </plugin>
             <!--servlet容器 jetty插件-->
             <!--https://blog.csdn.net/lipslive/article/details/9933155-->
+            <!--<plugin>-->
+                <!--<groupId>org.eclipse.jetty</groupId>-->
+                <!--<artifactId>jetty-maven-plugin</artifactId>-->
+                <!--<version>9.3.10.v20160621</version>-->
+                <!--<configuration>-->
+                    <!--<scanIntervalSeconds>10</scanIntervalSeconds>-->
+                    <!--<httpConnector>-->
+                        <!--<port>8081</port>-->
+                    <!--</httpConnector>-->
+                    <!--<webApp>-->
+                        <!--<contextPath>/</contextPath>-->
+                    <!--</webApp>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
             <plugin>
-                <groupId>org.eclipse.jetty</groupId>
+                <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.10.v20160621</version>
+                <version>8.1.16.v20140903</version>
                 <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <httpConnector>
-                        <port>8080</port>
-                    </httpConnector>
-                    <webApp>
+                    <stopPort>9988</stopPort>
+                    <stopKey>foo</stopKey>
+                    <scanIntervalSeconds>5</scanIntervalSeconds>
+                    <connectors>
+                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                            <port>8081</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <webAppConfig>
                         <contextPath>/</contextPath>
-                    </webApp>
+                    </webAppConfig>
                 </configuration>
             </plugin>
         </plugins>
@@ -179,10 +198,23 @@
             <version>3.0.8</version>
         </dependency>
 
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
         <!--<dependency>-->
             <!--<groupId>org.slf4j</groupId>-->
             <!--<artifactId>slf4j-nop</artifactId>-->
-            <!--<version>1.7.25</version>-->
+            <!--<version>1.7.6</version>-->
+        <!--</dependency>-->
+
+        <!--不可用，版本太久-->
+        <!--<dependency>-->
+            <!--<groupId>softamis.cluster4spring</groupId>-->
+            <!--<artifactId>cluster4spring</artifactId>-->
+            <!--<version>0.85</version>-->
         <!--</dependency>-->
 
     </dependencies>
